@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lovego/xiaomei/utils/slice"
+	"github.com/lovego/slice"
 )
 
 const SshShareConnFlags = `-o ControlMaster=auto` +
