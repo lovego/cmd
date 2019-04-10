@@ -22,9 +22,8 @@ func SudoWriteFile(file string, reader io.Reader) {
 		Run(O{Panic: true}, `sudo`, `mkdir`, `-p`, dir)
 	}
 
-	cmd := exec.Command(`sudo`, `cp`, `/dev/stdin`, file)
+	cmd := exec.Command(`sudo`, `tee`, file)
 	cmd.Stdin = reader
-	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
 		panic(err)
