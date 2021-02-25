@@ -23,7 +23,7 @@ type O struct {
 }
 
 func (o O) PrintCmd() bool {
-	return o.Print || os.Getenv(`PrintCmd`) == `true`
+	return o.Print || os.Getenv(`PrintCmd`) != ``
 }
 
 func Run(o O, name string, args ...string) (output string, err error) {
